@@ -197,12 +197,14 @@ add_javascript(G5_POSTCODE_JS, 0);    //다음 주소 js
         <col>
     </colgroup>
     <tbody>
-    <tr>
-        <th scope="row"><label for="reshuffle">인사 이동<?php echo $sound_only ?></label></th>
-        <td colspan="3">
-            <input type="checkbox" id="reshuffle" name="reshuffle" value="on">
-        </td>
-    </tr>
+    <?php if ($w!='u'){ ?>
+      <tr>
+          <th scope="row"><label for="reshuffle">인사 이동<?php echo $sound_only ?></label></th>
+          <td colspan="3">
+              <input type="checkbox" id="reshuffle" name="reshuffle" value="on">
+          </td>
+      </tr>
+    <?php } ?>
     <tr class="reshuffle" style="display:none;">
         <th scope="row"><label for="mb_id_past">기존 아이디 검색<?php echo $sound_only ?></label></th>
         <td>

@@ -4,7 +4,7 @@ include_once('./_common.php');
 
 
 $g5['title'] = '시리얼 조회';
-include_once('./admin.head.php');
+include_once('../admin.head.php');
 ?>
 <!-- <div id="wrap" style="position:absolute; top:-190px; left:220px;">
   <iframe src="http://localhost:8000/insung/bbs/board.php?bo_table=serial" width="900" height="700" scrolling="no" frameborder="0"></iframe>
@@ -15,4 +15,4 @@ include_once('./admin.head.php');
 </div>
 
 <?php
-include_once('./admin.tail.php');
+include_once('../admin.tail.php');
