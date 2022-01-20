@@ -1,0 +1,128 @@
+@charset "utf-8";
+
+/* 
+- 공통 nbo_
+- 목록 nbl_
+- 보기 nbv_
+- 코멘트 nbvc_
+- 쓰기 nbw__
+- 버튼 nbtn_
+ */
+
+/* ///////////////////////////////////////////////////////////////////////
+::: [ 레이아웃 ]:::
+/////////////////////////////////////////////////////////////////////// */
+
+/* 최상위 박스 (목록, 읽기, 쓰기 공통으로 적용) */
+#nbo_box {position:relative;background:#FFFFFF;font-family: '';border:1px solid #E7EAEB; padding:15px;}
+
+/* 읽기 (읽기와 전체목록보기 사이 간격 조정 */
+.nbo_box_view {margin-bottom:10px !important}
+
+/* 가로줄 (상단, 하단) */
+.nbo_line_top {display:block;height:2px;background:#1AAFC4;}
+.nbo_line_bottom {display:block;height:1px;background:#D8DEE0;margin-bottom:7px}
+
+/* 하단 버튼 */
+#sec_btn {margin:0px;padding:0px 0px;border:0px solid #ECECEC;}
+#sec_btn:after {display:block;visibility:hidden;clear:both;content:""}
+
+.btn_left {float:left;}
+.btn_left li {float:right;}
+.btn_right {float:right;}
+.btn_right li {float:left;}
+
+
+
+/* ///////////////////////////////////////////////////////////////////////
+::: [ 기본버튼 ]:::
+/////////////////////////////////////////////////////////////////////// */
+
+.nbtn {display:inline-block;vertical-align:middle;padding:0px 10px;height:25px;line-height:25px;font-size:12px;border-radius:0px;border:0px;}
+
+
+.nbtn_basic {background:#1AAFC4;color:#FFFFFF;margin-left:5px;}
+.nbtn_basic:hover {background:#1093A5;}
+
+.nbtn_modify {background:#8295B4;color:#FFFFFF;margin-right:5px;}
+.nbtn_modify:hover {background:#6381B1;}
+
+.nbtn_del {background:#E17C7C;color:#FFFFFF;margin-right:5px;}
+.nbtn_del:hover {background:#E35858;}
+
+.nbtn_rss {background:#F48323;color:#FFFFFF;margin-left:5px;}
+.nbtn_rss:hover {background:#E46B04;}
+
+.nbtn_cancel {background:#CACACA;color:#FFFFFF;margin-left:5px;}
+.nbtn_cancel:hover {background:#AFAFAF;}
+
+.ntbn_sch {background:#E6E6E6;color:#FFFFFF;width:25px;padding:0px}
+.ntbn_sch:hover {background:#1B577A;}
+
+.nbtn_cmt {background:#A3BFD0;color:#FFFFFF;margin-left:5px;}
+.nbtn_cmt:hover {background:#7EAECB;}
+
+
+
+/* ///////////////////////////////////////////////////////////////////////
+::: [ 체크박스 ]:::
+/////////////////////////////////////////////////////////////////////// */
+
+.selec_chk {position:absolute;top:0;left:0;width:0;height:0;opacity:0;outline:0;z-index:-1;overflow:hidden}
+.chk_box {position:relative}
+.chk_box input[type="checkbox"] + label {position:relative;color:#676e70}
+.chk_box input[type="checkbox"] + label:hover {color:#00AEFF !important}
+.chk_box input[type="checkbox"] + label span {float:left;width:15px;height:15px;display:block;background:#fff;border:1px solid #d0d4df;border-radius:3px}
+.write_div .chk_box input[type="checkbox"] + label, .bo_vc_w .chk_box input[type="checkbox"] + label {padding-left:20px}
+.write_div .chk_box input[type="checkbox"] + label span, .bo_vc_w .chk_box input[type="checkbox"] + label span {position:absolute;top:2px;left:0;width:15px;height:15px;display:block;margin:0;background:#fff;border:1px solid #d0d4df;border-radius:3px}
+.chk_box input[type="checkbox"]:checked + label {color:#000}
+.chk_box input[type="checkbox"]:checked + label span {background:url(./img/chk.png) no-repeat 50% 50% #00AEFF !important;border-color:#1471f6;border-radius:3px}
+
+
+
+/* ///////////////////////////////////////////////////////////////////////
+::: [ 검색결과 ]:::
+/////////////////////////////////////////////////////////////////////// */
+
+/* 검색결과 (테마 CSS와 중복됩니다. 불필요하면 삭제하세요) */
+.sch_word {color:#FF005A !important;background:none !important;padding:0px !important;line-height:18px !important;margin:0 2px !important}
+
+
+
+/* ///////////////////////////////////////////////////////////////////////
+::: [ input (필수입력) ]:::
+/////////////////////////////////////////////////////////////////////// */
+
+/* 필수입력 */
+.required {background-image:url('./img/require.png') !important;}
+
+
+
+/* ///////////////////////////////////////////////////////////////////////
+::: [ 페이징(하단) ]:::
+/////////////////////////////////////////////////////////////////////// */
+
+/* 페이징 박스 */
+#sec_page {margin:0 auto;text-align:center;}
+#sec_page:after {display:block;visibility:hidden;clear:both;content:""}
+
+
+/* 페이징 (테마 CSS와 중복됩니다. 불필요하면 삭제하세요)*/
+.pg_wrap {clear:both;float:none !important;}
+
+.pg_wrap a {border:0px !important;border-radius:5px;line-height:25px;height:25px;min-width:25px}
+.pg_current {border:0px !important;background:#1AAFC4;font-weight:bold;border-radius:5px;line-height:25px;height:25px;min-width:25px}
+
+
+
+/* ///////////////////////////////////////////////////////////////////////
+::: [ CAPTCHA ]:::
+/////////////////////////////////////////////////////////////////////// */
+
+#captcha {display:inline-block;position:relative;padding:5px;border:1px solid #E7EAEB;border-radius:0px;background:#F9F9F9;}
+#captcha legend {position:absolute;margin:0;padding:0;font-size:0;line-height:0;text-indent:-9999em;overflow:hidden}
+#captcha #captcha_img {height:30px;border:1px solid #D9D9D9;vertical-align:top;padding:0;margin:0}
+#captcha #captcha_mp3 {margin:0;padding:0;width:30px;height:30px;border:0;background:url('./img/captcha_vol.png') no-repeat;background-position:center center;border-radius:3px}
+#captcha #captcha_reload {margin:0;padding:0;width:30px;height:30px;border:0;background:url('./img/captcha_re.png') no-repeat;background-position:center center;border-radius:3px}
+#captcha #captcha_key {margin:0px 3px;padding:0 5px;width:90px;height:30px;border:1px solid #D9D9D9;background:#fff;;color:#007AAE;font-size:14px;font-weight:bold;text-align:center;vertical-align:top;border-radius:0px}
+#captcha #captcha_info {display:none;margin:5px 0 0;font-size:0.95em;letter-spacing:-0.1em}

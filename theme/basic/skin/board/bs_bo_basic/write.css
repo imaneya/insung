@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+/* ///////////////////////////////////////////////////////////////////////
+::: [ 쓰기(write.skin.php) ]:::
+/////////////////////////////////////////////////////////////////////// */
+
+/* 글쓰기 박스 */
+#nbw {padding:0px;margin:0px;}
+#nbw:after {display:block;visibility:hidden;clear:both;content:""}
+
+#nbw section {display:block;width:100%;}
+
+
+/* 각 부분 간격 */
+#sew_input {margin:10px 0px 10px 0px;}
+#sew_write {margin:0px 0px 10px 0px;}
+#sew_link {margin:0px 0px 10px 0px;}
+#sew_file {margin:0px 0px 10px 0px;}
+#sew_captcha {margin:0px 0px 5px 0px;}
+
+
+/* 테이블(table) 설정 */
+#nbw table {width:100%;padding:0px;border-spacing:0px;border-top:1px solid #E7EAEB;border-right: 1px solid #E7EAEB;}
+#nbw td {height:40px;padding:7px;border-bottom: 1px solid #E7EAEB;border-left: 1px solid #E7EAEB;}
+#nbw .td_class {width:90px;background:#F9F9F9;color:#202020;text-align:right;font-size:12px;font-weight:bold}
+
+
+/* select, input, textarea */
+#sew_input input {height:28px;padding:0px 5px;background:#F9F9F9;border:1px solid #D9D9D9;}
+#sew_input select {height:28px;padding:0px 0px;background:#F1F1F1;border:1px solid #D9D9D9;}
+#sew_write textarea {width:100%;margin:0px;padding:10px;border:1px solid #D9D9D9;box-shadow: none !important;line-height:1.6em;font-size:13px;}
+#sew_link .write_link {height:28px;padding:0px 5px;background:#F9F9F9;border:1px solid #D9D9D9;}
+
+.write_update {width:170px;height:28px;padding:0px 5px;background:none !important;border:0px !important;}
+.write_select {width:170px}
+.write_basic {width:170px;letter-spacing:0.5px;}
+.write_home {width:300px;letter-spacing:0.5px;}
+.write_title {width:100%}
+.write_link {width:100%;letter-spacing:0.5px;}
+
+
+
+/* 옵션 */
+#sew_input li {display:inline-block;margin-right:5px;font-size:12px;color:#808080}
+#sew_input li label {vertical-align:baseline}
+
+
+/* 글자 (비번) */
+#sew_input .pass_text {display:block;margin-top:5px;font-size:12px;color:#AFAFAF}
+
+
+/* 글쓰기 */
+#sew_write:after {display:block;visibility:hidden;clear:both;content:""}
+#sew_write .smarteditor2 iframe {background:#FFFFFF;}
+
+#char_max {display:block;margin-bottom:5px;font-size:12px;color:#808080}
+#char_max strong {color:#202020}
+
+#char_count_wrap {float:right;padding:2px 5px;margin-top:2px;background:#202020;color:#FFFFFF;font-size:12px}
+#char_count {display:inline-block;padding:0px;margin:0px;font-weight:bold}
+
+
+
+/* 업로드 */
+#sew_file .file_del {float:right;font-size:12px;color:#808080}
+.file_del span {margin-left:5px;font-size:12px;color:#202020}
+
+

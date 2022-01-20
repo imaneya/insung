@@ -1,0 +1,120 @@
+@charset "utf-8";
+
+/* ///////////////////////////////////////////////////////////////////////
+::: [ 보기(view.skin.php) ]:::
+/////////////////////////////////////////////////////////////////////// */
+
+/* 글보기 박스 */
+#nbv {padding:0px;margin:0px;}
+#nbv:after {display:block;visibility:hidden;clear:both;content:""}
+
+#nbv section {display:block;width:100%;}
+
+
+/* 각 부분 간격 */
+#sev_subject {margin-bottom:5px;padding:0px 0px;border:0px solid #ECECEC;}
+#sev_info {margin-bottom:0px;padding:0px 5px;border:0px solid #ECECEC;}
+#sev_upload {margin-bottom:0px;padding:0px 0px;}
+#sev_cont {margin-bottom:50px;padding:15px 15px;border:0px solid #ECECEC;}
+#sev_ldate {margin-bottom:20px;padding:0px 15px;border:0px solid #ECECEC;}
+#sev_sign {margin-bottom:20px;padding:5px 0px;border-width:1px 0px 1px 0px; border-style:dashed;border-color:#E7EAEB;}
+#sev_vote {margin-bottom:20px;padding:0px 0px;border:0px solid #ECECEC;}
+
+
+/* 상단 (카테고리, 제목) */
+#sev_subject {position:relative}
+#sev_subject:after {display:block;visibility:hidden;clear:both;content:""}
+
+.view_cate {display:inline-block;line-height:22px;padding:0px 10px;margin-left:0px;color:#FFFFFF;background:#5F5F5F;}
+.view_subject {display:inline-block;line-height:22px;padding:0px 5px;font-weight:bold;font-size:15px;color:#202020}
+
+
+/* 상단 (글정보, 스크랩) */
+#sev_info {line-height:30px;border-bottom:1px solid #E7EAEB;}
+#sev_info:after {display:block;visibility:hidden;clear:both;content:""} 
+
+#info_left {display:inline-block;font-size:12px;color:#202020;font-weight:bold}
+#info_left a {line-height:30px;}
+#info_left img {height:20px;width:20px;margin-bottom:0px;border-radius:50%;}
+#info_left i {margin-right:5px;}
+
+
+
+
+
+#info_right {float:right;font-size:12px;color:#808080}
+#info_right i {margin:0px 5px 0px 7px;color:#202020}
+
+.info_date {margin-left:7px;color:#78C48F}
+
+.info_scrap {display:inline-block;line-height:20px;width:20px;text-align:center;background:#60C5F1;border-radius:50%}
+.info_scrap i {margin:0px !important;color:#FFFFFF !important;}
+.info_scrap:hover {background:#19A0DA;}
+
+
+/* 업로드 */
+#sev_upload li {padding:5px 5px;border-bottom:1px solid #ECF0F1;background:#F9F9F9;font-size:12px;}
+
+.file_icon {display:inline-block;height:20px;padding:0px;width:20px;font-size:12px;text-align:center;background:#FFFFFF;color:#007AAE;border-radius:50%;border:1px solid #E7EAEB}
+.file_source {margin:0px 10px 0px 0px}
+.file_source a {color:#007AAE;}
+.file_info {color:#808080;}
+
+.link_icon {display:inline-block;height:20px;padding:0px;width:20px;font-size:12px;text-align:center;background:#FFFFFF;color:#138535;border-radius:50%;border:1px solid #E7EAEB}
+.link_source {margin:0px 10px 0px 0px}
+.link_source a {color:#138535;}
+.link_info {color:#808080;}
+
+
+/* 본문 */
+#sev_cont {position:relative}
+#sev_cont:after {display:block;visibility:hidden;clear:both;content:""}
+
+
+#cont_img {width:100%;overflow:hidden;zoom:1}
+#cont_img:after {display:block;visibility:hidden;clear:both;content:""}
+#cont_img a.view_image {display:block}
+#cont_img img {margin-bottom:20px;max-width:100%;height:auto}
+
+#cont_view {margin:0px;width:100%;line-height:1.6em;min-height:200px;word-break:break-all;overflow:hidden;font-size:13px;}
+#cont_view a {color:#202020;text-decoration:underline}
+#cont_view img {max-width:100%;height:auto}
+
+
+/* 수정일 */
+#sev_ldate {position:relative}
+#sev_ldate:after {display:block;visibility:hidden;clear:both;content:""}
+
+.idate_wrap {float:right;padding:2px 0px;border-top:1px solid #E7EAEB;font-size:12px;color:#BFBFBF;background:#FFFFFF;}
+
+
+/* 서명 */
+#sev_sign {}
+#sev_sign:after {display:block;visibility:hidden;clear:both;content:""}
+
+.sign_wrap {position:relative;padding:10px;background:#F9F9F9;line-height:1.6em;font-size:12px;border-radius:10px;}
+.sign_wrap img {position:absolute;top:10px;left:10px;width:60px;height:60px;border-radius:50%;border:0px solid #FFFFFF;}
+.sign_wrap span {display:inline-block;padding:0 10px;min-height:60px;margin-left:70px;border-left:1px solid #E7EAEB;}
+
+
+/* 추천 */
+#sev_vote {text-align:center}
+#sev_vote:after {display:block;visibility:hidden;clear:both;content:""}
+
+#sev_vote a {display:inline-block;margin:0px 1px;vertical-align:middle;background:#FFF;color:#202020;width:60px;line-height:40px;border-radius:5px;border:1px solid #E7EAEB}
+#sev_vote i {font-size:14px;margin-right:5px;}
+
+#vote_good {position:relative;display:inline-block;}
+#vote_ngood {position:relative;display:inline-block;}
+
+#vote_good a:hover {background:#F9F9F9}
+#vote_ngood a:hover {background:#F9F9F9}
+
+#vote_good strong {color:#00B0F0}
+#vote_ngood strong {color:#C00000}
+
+.nbtn_good {display:inline-block;margin:0px 1px;vertical-align:middle;background:#F9F9F9;color:#202020;width:60px;line-height:40px;border-radius:5px;border:1px solid #E7EAEB}
+.nbtn_ngood {display:inline-block;margin:0px 1px;vertical-align:middle;background:#F9F9F9;color:#202020;width:60px;line-height:40px;border-radius:5px;border:1px solid #E7EAEB}
+
+#act_good {display:none;position:absolute;top:45px;left:-35px;z-index:9999;padding:1px;width:140px;background:#00A2E8;color:#FFFFFF;text-align:center;font-size:12px;}
+#act_ngood {display:none;position:absolute;top:45px;left:-35px;z-index:9999;padding:1px;width:140px;background:#DF151C;color:#FFFFFF;text-align:center;font-size:12px;}
