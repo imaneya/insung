@@ -10,7 +10,9 @@ include_once('./admin.head.php');
   <iframe src="http://localhost:8000/insung/bbs/board.php?bo_table=serial" width="900" height="700" scrolling="no" frameborder="0"></iframe>
 </div> -->
 
-<iframe src="http://localhost:8000/insung/bbs/board.php?bo_table=serial" width="1000" height="1000" scrolling="no" frameborder="0"></iframe>
+<div style="max-width:1000px">
+  <iframe id="iframe" src="<?=G5_BBS_URL?>/board.php?bo_table=serial" width="100%" height="1000" scrolling="no" frameborder="0"></iframe>
+</div>
 
 <?php
 include_once('./admin.tail.php');
