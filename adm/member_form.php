@@ -198,10 +198,45 @@ add_javascript(G5_POSTCODE_JS, 0);    //다음 주소 js
     </colgroup>
     <tbody>
     <tr>
+        <th scope="row"><label for="reshuffle">인사 이동<?php echo $sound_only ?></label></th>
+        <td colspan="3">
+            <input type="checkbox" id="reshuffle" name="reshuffle" value="on">
+        </td>
+    </tr>
+    <tr class="reshuffle" style="display:none;">
+        <th scope="row"><label for="mb_id_past">기존 아이디 검색<?php echo $sound_only ?></label></th>
+        <td>
+          <input type="text" name="mb_id_past" list="id_list" class="frm_input" size="15"  maxlength="20">
+          <datalist id="id_list">
+            <?
+            echo $sql = " select * from g5_member where mb_id not in ('admin'); ";
+            $result = sql_query($sql);
+            while($row = sql_fetch_array($result)){
+            ?>
+              <option value="<?=$row['mb_id']?>"></option>
+            <?
+            };
+            ?>
+          </datalist>
+          <a href="" class="btn_frmline">실적보기</a>
+        </td>
+        <th scope="row"><label for="copy_start_date">실적 복사 기간<?php echo $sound_only ?></label></th>
+        <td>
+          <input type="date" name="copy_start_date" class="frm_input" size="15"  maxlength="20">
+          <input type="date" name="copy_end_date" class="frm_input" size="15"  maxlength="20">
+        </td>
+    </tr>
+    <tr>
         <th scope="row"><label for="mb_id">아이디<?php echo $sound_only ?></label></th>
         <td>
+            <?php if ($w!='u'){ ?>
+            <select name="mb_id_add">
+              <option value="team_">team_</option>
+              <option value="ceo_">ceo_</option>
+            </select>
+            <?php } ?>
             <input type="text" name="mb_id" value="<?php echo $mb['mb_id'] ?>" id="mb_id" <?php echo $required_mb_id ?> class="frm_input <?php echo $required_mb_id_class ?>" size="15"  maxlength="20">
-            <?php if ($w=='u'){ ?><a href="./boardgroupmember_form.php?mb_id=<?php echo $mb['mb_id'] ?>" class="btn_frmline">접근가능그룹보기</a><?php } ?>
+            <!-- <?php // if ($w=='u'){ ?><a href="./boardgroupmember_form.php?mb_id=<?php // echo $mb['mb_id'] ?>" class="btn_frmline">접근가능그룹보기</a><?php // } ?> -->
         </td>
         <th scope="row"><label for="mb_password">비밀번호<?php echo $sound_only ?></label></th>
         <td><input type="password" name="mb_password" id="mb_password" <?php echo $required_mb_password ?> class="frm_input <?php echo $required_mb_password ?>" size="15" maxlength="20"></td>
@@ -209,16 +244,14 @@ add_javascript(G5_POSTCODE_JS, 0);    //다음 주소 js
     <tr>
         <th scope="row"><label for="mb_name">이름(실명)<strong class="sound_only">필수</strong></label></th>
         <td><input type="text" name="mb_name" value="<?php echo $mb['mb_name'] ?>" id="mb_name" required class="required frm_input" size="15"  maxlength="20"></td>
+        <th scope="row"><label for="mb_email">E-mail<strong class="sound_only">필수</strong></label></th>
+        <td><input type="text" name="mb_email" value="<?php echo $mb['mb_email'] ?>" id="mb_email" maxlength="100" required class="required frm_input email" size="30"></td>
     </tr>
     <tr>
         <th scope="row"><label for="mb_hp">휴대폰번호</label></th>
         <td><input type="text" name="mb_hp" value="<?php echo $mb['mb_hp'] ?>" id="mb_hp" class="frm_input" size="15" maxlength="20"></td>
         <th scope="row"><label for="mb_tel">전화번호</label></th>
         <td><input type="text" name="mb_tel" value="<?php echo $mb['mb_tel'] ?>" id="mb_tel" class="frm_input" size="15" maxlength="20"></td>
-    </tr>
-    <tr>
-        <th scope="row"><label for="mb_email">E-mail<strong class="sound_only">필수</strong></label></th>
-        <td><input type="text" name="mb_email" value="<?php echo $mb['mb_email'] ?>" id="mb_email" maxlength="100" required class="required frm_input email" size="30"></td>
     </tr>
     <tr>
         <th scope="row">주소</th>
@@ -320,6 +353,18 @@ function fmember_submit(f)
 {
     return true;
 }
+
+$(document).ready(function(){
+    $("#reshuffle").change(function(){
+        if($("#reshuffle").is(":checked")){
+          $(".reshuffle").show();
+        }else{
+          $(".reshuffle").hide();
+        }
+    });
+});
+
+
 </script>
 <?php
 run_event('admin_member_form_after', $mb, $w);

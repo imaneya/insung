@@ -11,18 +11,18 @@ auth_check_menu($auth, $sub_menu, 'w');
 
 check_admin_token();
 
-$mb_id = isset($_POST['mb_id']) ? trim($_POST['mb_id']) : '';
+$mb_id = isset($_POST['mb_id']) ? trim($_POST['mb_id_add']).trim($_POST['mb_id']) : '';
 $mb_certify_case = isset($_POST['mb_certify_case']) ? preg_replace('/[^0-9a-z_]/i', '', $_POST['mb_certify_case']) : '';
 $mb_certify = isset($_POST['mb_certify']) ? preg_replace('/[^0-9a-z_]/i', '', $_POST['mb_certify']) : '';
 $mb_zip = isset($_POST['mb_zip']) ? preg_replace('/[^0-9a-z_]/i', '', $_POST['mb_zip']) : '';
 
 // 휴대폰번호 체크
 $mb_hp = hyphen_hp_number($_POST['mb_hp']);
-if($mb_hp) {
-    $result = exist_mb_hp($mb_hp, $mb_id);
-    if ($result)
-        alert($result);
-}
+// if($mb_hp) {
+//     $result = exist_mb_hp($mb_hp, $mb_id);
+//     if ($result)
+//         alert($result);
+// }
 
 // 인증정보처리
 if($mb_certify_case && $mb_certify) {
@@ -61,7 +61,7 @@ $check_keys = array(
 );
 
 for($i=1;$i<=10;$i++){
-    $check_keys[] = 'mb_'.$i; 
+    $check_keys[] = 'mb_'.$i;
 }
 
 foreach( $check_keys as $key ){
@@ -111,16 +111,16 @@ if ($w == '')
         alert('이미 존재하는 회원아이디입니다.\\nＩＤ : '.$mb['mb_id'].'\\n이름 : '.$mb['mb_name'].'\\n닉네임 : '.$mb['mb_nick'].'\\n메일 : '.$mb['mb_email']);
 
     // 닉네임중복체크
-    $sql = " select mb_id, mb_name, mb_nick, mb_email from {$g5['member_table']} where mb_nick = '{$mb_nick}' ";
-    $row = sql_fetch($sql);
-    if (isset($row['mb_id']) && $row['mb_id'])
-        alert('이미 존재하는 닉네임입니다.\\nＩＤ : '.$row['mb_id'].'\\n이름 : '.$row['mb_name'].'\\n닉네임 : '.$row['mb_nick'].'\\n메일 : '.$row['mb_email']);
+    // $sql = " select mb_id, mb_name, mb_nick, mb_email from {$g5['member_table']} where mb_nick = '{$mb_nick}' ";
+    // $row = sql_fetch($sql);
+    // if (isset($row['mb_id']) && $row['mb_id'])
+    //     alert('이미 존재하는 닉네임입니다.\\nＩＤ : '.$row['mb_id'].'\\n이름 : '.$row['mb_name'].'\\n닉네임 : '.$row['mb_nick'].'\\n메일 : '.$row['mb_email']);
 
     // 이메일중복체크
-    $sql = " select mb_id, mb_name, mb_nick, mb_email from {$g5['member_table']} where mb_email = '{$mb_email}' ";
-    $row = sql_fetch($sql);
-    if (isset($row['mb_id']) && $row['mb_id'])
-        alert('이미 존재하는 이메일입니다.\\nＩＤ : '.$row['mb_id'].'\\n이름 : '.$row['mb_name'].'\\n닉네임 : '.$row['mb_nick'].'\\n메일 : '.$row['mb_email']);
+    // $sql = " select mb_id, mb_name, mb_nick, mb_email from {$g5['member_table']} where mb_email = '{$mb_email}' ";
+    // $row = sql_fetch($sql);
+    // if (isset($row['mb_id']) && $row['mb_id'])
+    //     alert('이미 존재하는 이메일입니다.\\nＩＤ : '.$row['mb_id'].'\\n이름 : '.$row['mb_name'].'\\n닉네임 : '.$row['mb_nick'].'\\n메일 : '.$row['mb_email']);
 
     sql_query(" insert into {$g5['member_table']} set mb_id = '{$mb_id}', mb_password = '".get_encrypt_string($mb_password)."', mb_datetime = '".G5_TIME_YMDHIS."', mb_ip = '{$_SERVER['REMOTE_ADDR']}', mb_email_certify = '".G5_TIME_YMDHIS."', {$sql_common} ");
 }
@@ -198,7 +198,7 @@ if( $w == '' || $w == 'u' ){
 
             move_uploaded_file($_FILES['mb_icon']['tmp_name'], $dest_path);
             chmod($dest_path, G5_FILE_PERMISSION);
-            
+
             if (file_exists($dest_path)) {
                 $size = @getimagesize($dest_path);
                 if ($size[0] > $config['cf_member_icon_width'] || $size[1] > $config['cf_member_icon_height']) {
@@ -219,7 +219,7 @@ if( $w == '' || $w == 'u' ){
             }
         }
     }
-    
+
     $mb_img_dir = G5_DATA_PATH.'/member_image/';
     if( !is_dir($mb_img_dir) ){
         @mkdir($mb_img_dir, G5_DIR_PERMISSION);
@@ -236,13 +236,13 @@ if( $w == '' || $w == 'u' ){
         if (!preg_match($image_regex, $_FILES['mb_img']['name'])) {
             alert($_FILES['mb_img']['name'] . '은(는) 이미지 파일이 아닙니다.');
         }
-        
+
         if (preg_match($image_regex, $_FILES['mb_img']['name'])) {
             @mkdir($mb_img_dir, G5_DIR_PERMISSION);
             @chmod($mb_img_dir, G5_DIR_PERMISSION);
-            
+
             $dest_path = $mb_img_dir.'/'.$mb_icon_img;
-            
+
             move_uploaded_file($_FILES['mb_img']['tmp_name'], $dest_path);
             chmod($dest_path, G5_FILE_PERMISSION);
 
