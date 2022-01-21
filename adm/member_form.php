@@ -211,7 +211,7 @@ add_javascript(G5_POSTCODE_JS, 0);    //다음 주소 js
           <input type="text" name="mb_id_past" list="id_list" class="frm_input" size="15"  maxlength="20">
           <datalist id="id_list">
             <?
-            echo $sql = " select * from g5_member where mb_id not in ('admin'); ";
+            $sql = " select * from g5_member where mb_id not in ('admin'); ";
             $result = sql_query($sql);
             while($row = sql_fetch_array($result)){
             ?>
