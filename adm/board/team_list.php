@@ -11,80 +11,114 @@ include_once('../admin.head.php');
 
 <div id="team_list_con">
 
-  <div class="ceo_line">
-    <div class="ceo_btn_box" style="float:right;">
+  <div class="line">
+
+    <div class="btn_box">
       CEO
-      <a class="add_btn plus" href="javascript:add_ceo()">+</a>
-      <a class="del_btn minus" href="javascript:del_ceo()">-</a>
+      <a data-type="CEO" data-val="+">+</a>
+      <a data-type="CEO" data-val="-">-</a>
     </div>
 
-    <div class="ceo_box" style="text-align:center;">
-      <a class="ceo_1" href="javascript:change_ceo_input(this,1)">CEO</a>
-      <a class="ceo_2" href="<?=G5_ADMIN_URL?>/member_form.php?w=u&mb_id=team3">CEO</a>
+    <div class="element_box">
+      <a>CEO</a>
+      <a>CEO</a>
     </div>
+
   </div>
 
-  <div class="team_line">
-    <div class="team_btn_box" style="float:right;">
+  <div class="line">
+
+    <div class="btn_box">
       TEAM
-      <a class="add_btn plus" href="javascript:add_team()">+</a>
-      <a class="del_btn minus" href="javascript:del_team()">-</a>
+      <a data-type="TEAM" data-val="+">+</a>
+      <a data-type="TEAM" data-val="-">-</a>
     </div>
 
-    <div class="team_box" style="text-align:center; display:flex; justify-content: center; ">
-      <div class="team_1">
-        <a href="<?=G5_ADMIN_URL?>/member_form.php?w=u&mb_id=team3">TEAM</a>
-        <a href="javascript:add_sales(1)">+</a>
-        <a href="javascript:del_sales(1)">-</a>
+    <div class="element_box flex_center">
+      <div class="team">
 
-        <div class="sales_box_1" style="text-align:center;">
-          <a href="<?=G5_ADMIN_URL?>/member_form.php?w=u&mb_id=team3">SALES</a>
-          <a href="javascript:add_comp(3)">+</a>
-          <a href="javascript:del_comp(3)">-</a><br />
-          <a href="<?=G5_ADMIN_URL?>/member_form.php?w=u&mb_id=team3">SALES</a>
-          <a href="javascript:add_comp(3)">+</a>
-          <a href="javascript:del_comp(3)">-</a><br />
-          <a href="<?=G5_ADMIN_URL?>/member_form.php?w=u&mb_id=team3">SALES</a>
-          <a href="javascript:add_comp(3)">+</a>
-          <a href="javascript:del_comp(3)">-</a><br />
+        <div class="btn_box">
+          <a>TEAM</a>
+          <a data-type="SALES" data-val="+">+</a>
+          <a data-type="SALES" data-val="-">-</a>
+        </div>
+
+        <div class="element_box">
+
+          <div class="sales">
+
+            <div class="btn_box">
+              <a>SALES</a>
+              <a data-type="COM" data-val="+">+</a>
+              <a data-type="COM" data-val="-">-</a>
+            </div>
+
+            <div class="element_box">
+              <div>COM</div>
+              <div>COM</div>
+            </div>
+
+          </div>
+
+          <div class="sales">
+
+            <div class="btn_box">
+              <a>SALES</a>
+              <a data-type="COM" data-val="+">+</a>
+              <a data-type="COM" data-val="-">-</a>
+            </div>
+
+            <div class="element_box">
+              <div>COM</div>
+              <div>COM</div>
+            </div>
+
+          </div>
+
+          <div class="sales">
+
+            <div class="btn_box">
+              <a>SALES</a>
+              <a data-type="COM" data-val="+">+</a>
+              <a data-type="COM" data-val="-">-</a>
+            </div>
+
+            <div class="element_box">
+              <div>COM</div>
+              <div>COM</div>
+            </div>
+
+          </div>
+
         </div>
       </div>
 
-      <div class="team_2">
-        <a href="<?=G5_ADMIN_URL?>/member_form.php?w=u&mb_id=team3">TEAM</a>
-        <a href="javascript:add_sales(2)">+</a>
-        <a href="javascript:del_sales(2)">-</a>
+      <div class="team">
 
-        <div class="sales_box_2" style="text-align:center;">
-          <a href="<?=G5_ADMIN_URL?>/member_form.php?w=u&mb_id=team3">SALES</a>
-          <a href="javascript:add_comp(3)">+</a>
-          <a href="javascript:del_comp(3)">-</a><br />
-          <a href="<?=G5_ADMIN_URL?>/member_form.php?w=u&mb_id=team3">SALES</a>
-          <a href="javascript:add_comp(3)">+</a>
-          <a href="javascript:del_comp(3)">-</a><br />
-          <a href="<?=G5_ADMIN_URL?>/member_form.php?w=u&mb_id=team3">SALES</a>
-          <a href="javascript:add_comp(3)">+</a>
-          <a href="javascript:del_comp(3)">-</a><br />
+        <div class="btn_box">
+          <a>TEAM</a>
+          <a data-type="SALES" data-val="+">+</a>
+          <a data-type="SALES" data-val="-">-</a>
         </div>
+
+        <div class="element_box">
+        </div>
+
       </div>
 
-      <div class="team_3">
-        <a href="<?=G5_ADMIN_URL?>/member_form.php?w=u&mb_id=team3">TEAM</a>
-        <a href="javascript:add_sales(3)">+</a>
-        <a href="javascript:del_sales(3)">-</a>
+      <div class="team">
 
-        <div class="sales_box_3" style="text-align:center;">
-          <a href="<?=G5_ADMIN_URL?>/member_form.php?w=u&mb_id=team3">SALES</a>
-          <a href="javascript:add_comp(3)">+</a>
-          <a href="javascript:del_comp(3)">-</a><br />
-          <a href="<?=G5_ADMIN_URL?>/member_form.php?w=u&mb_id=team3">SALES</a>
-          <a href="javascript:add_comp(3)">+</a>
-          <a href="javascript:del_comp(3)">-</a><br />
-          <a href="<?=G5_ADMIN_URL?>/member_form.php?w=u&mb_id=team3">SALES</a>
-          <a href="javascript:add_comp(3)">+</a>
-          <a href="javascript:del_comp(3)">-</a><br />
+        <div class="btn_box">
+          <a>TEAM</a>
+          <a data-type="SALES" data-val="+">+</a>
+          <a data-type="SALES" data-val="-">-</a>
         </div>
+
+        <div class="element_box">
+        </div>
+
       </div>
+
     </div>
   </div>
 </div>
@@ -125,69 +159,72 @@ include_once('../admin.head.php');
 </datalist>
 
 <script>
-var ceo_cnt = 2;
+// $(document).ready(function(){
+//  $('#team_list_con a').attr('href','javascript:void(0);');
+// });
 
-function add_ceo(){
-  ceo_cnt++;
-  $('.ceo_box').append('<a class="ceo_'+ceo_cnt+'" href="<?=G5_ADMIN_URL?>/member_form.php?w=u&mb_id=team3">CEO</a>');
-  $.post( "./exec/team.php", {mode:'add', no:ceo_cnt, type:'ceo'}, function( data ) {
-    var obj = JSON.parse(data);
-    if(obj.result_code!='OK') alert(obj.result_msg);
-  });
-}
+// 마우스 오버 edit, +, - 명령 팝업창 마우스 따라다님
+// edit 클릭시 input 붙이고, a태그 삭제
+// db 연동
 
-function del_ceo(){
-  $('.ceo_'+ceo_cnt).remove();
-  $.post( "./exec/team.php", {mode:'del', no:ceo_cnt, type:'ceo'}, function( data ) {
-    var obj = JSON.parse(data);
-    if(obj.result_code!='OK') alert(obj.result_msg);
-  });
-  if(ceo_cnt!=0) ceo_cnt--;
-}
+$(document).on('click', 'a', function(){ //this is the function I am trying to get to work.
+  var type=$(this).data('type');
+  var val=$(this).data('val');
+  var html=add_element(type);
 
-
-var team_cnt = 3;
-
-function add_team(){
-  team_cnt++;
-  $('.team_box').append('<a class="team_'+team_cnt+'" href="<?=G5_ADMIN_URL?>/member_form.php?w=u&mb_id=team3">TEAM</a>');
-  $.post( "./exec/team.php", {mode:'add', no:team_cnt, type:'team'}, function( data ) {
-    var obj = JSON.parse(data);
-    if(obj.result_code!='OK') alert(obj.result_msg);
-  });
-}
-
-function del_team(){
-  $('.team_'+team_cnt).remove();
-  $.post( "./exec/team.php", {mode:'del', no:team_cnt, type:'team'}, function( data ) {
-    var obj = JSON.parse(data);
-    if(obj.result_code!='OK') alert(obj.result_msg);
-  });
-  if(team_cnt!=0) team_cnt--;
-}
-
-
-$('.view').click(function(){
-
-  $(obj).appendTo('<input type="text" value="" list="ceo_list">');
-  $(this).remove();
+  if(val=='+'){
+    $(this).closest('div').next().append(html);
+  }
+  if(val=='-'){
+    $(this).closest('div').next().children().last().remove();
+  }
 });
 
+function add_element(type){
+  var type=type;
+  var html='';
 
-function change_ceo_input(obj,num){
-  var num=num;
+  if(type=='CEO'){
+    html+='<a>CEO</a>';
+  }
 
-  $(obj).remove();
-  $(obj).appendTo('<input type="text" value="" list="ceo_list">');
-  //$('.ceo_'+num).remove();
-}
+  if(type=='TEAM'){
+    html+='<div class="team">';
 
-function change_team_input(num){
-}
+    html+=' <div class="btn_box">';
+    html+='   <a>TEAM</a>';
+    html+='   <a data-type="SALES" data-val="+">+</a>';
+    html+='   <a data-type="SALES" data-val="-">-</a>';
+    html+=' </div>';
 
-function change_sales_input(){
+    html+=' <div class="element_box">';
+    html+=' </div>';
 
+    html+='</div>';
+  }
 
+  if(type=='SALES'){
+    html+='<div class="sales">';
+
+    html+=' <div class="btn_box">';
+    html+='   <a>SALES</a>';
+    html+='   <a data-type="COM" data-val="+">+</a>';
+    html+='   <a data-type="COM" data-val="-">-</a>';
+    html+=' </div>';
+
+    html+=' <div class="element_box">';
+    html+=' </div>';
+
+    html+='</div>';
+  }
+
+  if(type=='COM'){
+    html+='<div class="com">';
+    html+='  <a>COM</a>';
+    html+='</div>';
+  }
+
+  return html;
 }
 
 </script>

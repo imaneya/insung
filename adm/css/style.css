@@ -1,1 +1,9 @@
+.flex_center {display:flex; justify-content: center;}
+
+
 #team_list_con {width:1000px; height:1000px;}
+#team_list_con a {cursor:pointer;}
+#team_list_con div {min-height:20px;}
+#team_list_con .line {white-space:normal;}
+#team_list_con .btn_box {float:right;}
+#team_list_con .element_box {text-align:center;}
